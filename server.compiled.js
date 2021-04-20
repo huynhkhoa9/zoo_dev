@@ -19,9 +19,6 @@ app.use(_express["default"]["static"](_path["default"].join(__dirname, 'client/b
 app.get('*', function (req, res) {
   res.sendFile(_path["default"].join(__dirname + '/client/build/index.html'));
 });
-router.post("/api/auth/signup", function (req, res) {
-  res.send("Signing Up!");
-});
 app.use("/", router);
 app.listen(PORT, function () {
   console.log("Server listening at port ".concat(PORT, "."));

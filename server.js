@@ -14,10 +14,6 @@ app.get('*', (req,res) =>{
     res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
 
-router.post("/api/auth/signup", (req, res) =>{
-    res.send("Signing Up!");
-});
-
 app.use("/", router);
 
 app.listen(PORT, () => {
