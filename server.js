@@ -5,7 +5,7 @@ import express from 'express';
 
 const PORT = process.env.PORT || 8080;
 const app = express();
-const router = express.router();
+const router = express.Router();
 
 // Serve the static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
