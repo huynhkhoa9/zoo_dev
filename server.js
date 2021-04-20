@@ -1,6 +1,6 @@
 // server.js
 //
-import path from 'path-dirname';
+import path from 'path';
 import express from 'express';
 
 const PORT = process.env.HTTP_PORT || 4001;
