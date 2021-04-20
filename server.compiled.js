@@ -19,13 +19,13 @@ app.use(_express["default"]["static"](_path["default"].join(__dirname, 'client/b
 app.get('*', function (req, res) {
   res.sendFile(_path["default"].join(__dirname + '/client/build/index.html'));
 });
-router.post("/api/auth/signin", controller.signin);
-router.post("/api/auth/signup", controller.signup);
-router.post("/api/auth/employeesignin", controller.employeesignin);
-router.post("/api/auth/addanimal", controller.addanimal);
-router.post("/api/auth/addemployee", controller.addemployee);
-router.post("/api/auth/addrevenue", controller.addrevenue);
-router.post("/api/auth/getAnimals", controller.getAnimals);
+router.post("/api/auth/signin", function (req, res) {});
+router.post("/api/auth/signup", function (req, res) {});
+router.post("/api/auth/employeesignin", function (req, res) {});
+router.post("/api/auth/addanimal", function (req, res) {});
+router.post("/api/auth/addemployee", function (req, res) {});
+router.post("/api/auth/addrevenue", function (req, res) {});
+router.post("/api/auth/getAnimals", function (req, res) {});
 app.use("/", router);
 app.listen(PORT, function () {
   console.log("Server listening at port ".concat(PORT, "."));

@@ -14,13 +14,13 @@ app.get('*', (req,res) =>{
     res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
 
-router.post("/api/auth/signin", controller.signin)
-router.post("/api/auth/signup", controller.signup)
-router.post("/api/auth/employeesignin", controller.employeesignin)
-router.post("/api/auth/addanimal", controller.addanimal)
-router.post("/api/auth/addemployee", controller.addemployee)
-router.post("/api/auth/addrevenue", controller.addrevenue)
-router.post("/api/auth/getAnimals", controller.getAnimals)
+router.post("/api/auth/signin", (req, res) =>{});
+router.post("/api/auth/signup", (req, res) =>{});
+router.post("/api/auth/employeesignin", (req, res) =>{});
+router.post("/api/auth/addanimal", (req, res) =>{});
+router.post("/api/auth/addemployee", (req, res) =>{});
+router.post("/api/auth/addrevenue", (req, res) =>{});
+router.post("/api/auth/getAnimals", (req, res) =>{});
 
 app.use("/", router);
 
