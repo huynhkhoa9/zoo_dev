@@ -3,9 +3,9 @@
 import path from 'path';
 import express from 'express';
 
-const authroutes = require("./routes/auth.routes");
 const PORT = process.env.PORT || 8080;
 const app = express();
+const router = express.Router();
 
 // Serve the static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
@@ -14,7 +14,9 @@ app.get('*', (req,res) =>{
     res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
 
-app.use("/", authroutes);
+router.post("/api/auth/signup", (req, res) =>{
+    res.send("Signing Up!");
+});
 
 app.listen(PORT, () => {
   console.log(`Server listening at port ${PORT}.`);
