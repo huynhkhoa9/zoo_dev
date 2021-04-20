@@ -5,7 +5,7 @@ import express from 'express';
 
 const PORT = process.env.PORT || 8080;
 const app = express();
-const router = express.Router();
+const router = require('./auth.routes');
 
 // Serve the static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
@@ -13,14 +13,6 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 app.get('*', (req,res) =>{
     res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
-
-router.post("/api/auth/signin", (req, res) =>{ res.send("Customer Sign In") });
-router.post("/api/auth/signup", (req, res) =>{res.send("Customer Registration") });
-router.post("/api/auth/employeesignin", (req, res) =>{});
-router.post("/api/auth/addanimal", (req, res) =>{});
-router.post("/api/auth/addemployee", (req, res) =>{});
-router.post("/api/auth/addrevenue", (req, res) =>{});
-router.post("/api/auth/getAnimals", (req, res) =>{});
 
 app.use("/", router);
 

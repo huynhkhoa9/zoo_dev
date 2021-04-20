@@ -1,6 +1,6 @@
 const { setRandomFallback } = require("bcryptjs");
-const controller = require("../controllers/auth.controller");
-const router = require("express").Router()
+const controller = require("./controllers/auth.controller");
+const router = require('express').Router()
 
 router.post("/api/auth/signin", controller.signin)
 router.post("/api/auth/signup", controller.signup)

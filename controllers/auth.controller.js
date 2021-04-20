@@ -5,10 +5,10 @@ var jwt = require("jsonwebtoken")
 var bcrypt = require("bcryptjs")
 
 const db = mysql.createPool({
-    host: "zoo-database.chdju4zwao3b.us-east-2.rds.amazonaws.com",
-    user: "admin",
-    password: "UHCougarsCS2021$",
-    database: "ebdb"
+    host: process.env.RDS_HOSTNAME,
+    user:  process.env.RDS_USERNAME,
+    password:  process.env.RDS_PASSWORD,
+    database:  process.env.RDS_HOSTNAME
   });
 
 exports.signup = (req, res) => {
