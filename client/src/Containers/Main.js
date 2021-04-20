@@ -4,7 +4,7 @@ import "./Main.css"
 export default function Main(){
     return(
   
-        <div className="Main">
+    <div className="Main">
       <head>
       <link rel="stylesheet" href="Main.css"></link>
       </head>
