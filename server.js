@@ -8,7 +8,6 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, 'client', 'build')));
 
-
 app.listen(PORT, () => {
   console.log(`Server listening at port ${PORT}.`);
 });
