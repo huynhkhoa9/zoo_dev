@@ -5,7 +5,7 @@ import express from 'express';
 
 const PORT = process.env.PORT || 8080;
 const app = express();
-const router = require('./auth.routes');
+import {router} from './auth.routes';
 
 // Serve the static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
