@@ -3,14 +3,18 @@
 import path from 'path';
 import express from 'express';
 
-const authroutes = require("./routes/auth.routes")
-const mysql = require('mysql')
+const authroutes = require("./routes/auth.routes");
 const PORT = process.env.PORT || 8080;
 const app = express();
 
-// add middlewares
-app.use(express.static(path.join(__dirname, "..", "build")));
-app.use(express.static("public"));
+// Serve the static files from the React app
+app.use(express.static(path.join(__dirname, 'client/build')));
+// Handles any requests that don't match the ones above
+app.get('*', (req,res) =>{
+    res.sendFile(path.join(__dirname+'/client/build/index.html'));
+});
+
+app.use("/", authroutes);
 
 app.listen(PORT, () => {
   console.log(`Server listening at port ${PORT}.`);
