@@ -3,6 +3,8 @@
 import path from 'path';
 import express from 'express';
 
+const authroutes = require("./routes/auth.routes")
+const mysql = require('mysql')
 const PORT = process.env.PORT || 8080;
 const app = express();
 
@@ -20,6 +22,8 @@ app.get('/api/getList', (req,res) => {
 app.get('*', (req,res) =>{
     res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
+
+app.use("/", authroutes);
 
 app.listen(PORT, () => {
   console.log(`Server listening at port ${PORT}.`);
