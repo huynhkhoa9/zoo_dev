@@ -5,6 +5,7 @@ import express from 'express';
 
 const PORT = process.env.PORT || 8080;
 const app = express();
+const mysql = require('mysql');
 
 const db = mysql.createPool({
   host: process.env.RDS_HOSTNAME,

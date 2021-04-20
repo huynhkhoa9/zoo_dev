@@ -10,6 +10,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 //
 var PORT = process.env.PORT || 8080;
 var app = (0, _express["default"])();
+
+var mysql = require('mysql');
+
 var db = mysql.createPool({
   host: process.env.RDS_HOSTNAME,
   user: process.env.RDS_USERNAME,
