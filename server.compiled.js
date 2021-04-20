@@ -22,6 +22,7 @@ app.get('*', function (req, res) {
 router.post("/api/auth/signup", function (req, res) {
   res.send("Signing Up!");
 });
+app.use("/", router);
 app.listen(PORT, function () {
   console.log("Server listening at port ".concat(PORT, "."));
 });

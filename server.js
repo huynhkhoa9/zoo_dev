@@ -18,6 +18,8 @@ router.post("/api/auth/signup", (req, res) =>{
     res.send("Signing Up!");
 });
 
+app.use("/", router);
+
 app.listen(PORT, () => {
   console.log(`Server listening at port ${PORT}.`);
 });
