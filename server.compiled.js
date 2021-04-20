@@ -8,6 +8,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 // server.js
 //
+var authroutes = require("./routes/auth.routes");
+
+var mysql = require('mysql');
+
 var PORT = process.env.PORT || 8080;
 var app = (0, _express["default"])(); // Serve the static files from the React app
 
@@ -22,6 +26,7 @@ app.get('/api/getList', function (req, res) {
 app.get('*', function (req, res) {
   res.sendFile(_path["default"].join(__dirname + '/client/build/index.html'));
 });
+app.use("/", authroutes);
 app.listen(PORT, function () {
   console.log("Server listening at port ".concat(PORT, "."));
 });
