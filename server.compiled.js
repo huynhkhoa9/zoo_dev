@@ -4,12 +4,12 @@ var _path = _interopRequireDefault(require("path"));
 
 var _express = _interopRequireDefault(require("express"));
 
+var _auth = _interopRequireDefault(require("./routes/auth.routes"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 // server.js
 //
-var authroutes = require("/routes/auth.routes");
-
 var PORT = process.env.PORT || 8080;
 var app = (0, _express["default"])(); // Serve the static files from the React app
 
@@ -18,7 +18,7 @@ app.use(_express["default"]["static"](_path["default"].join(__dirname, 'client/b
 app.get('*', function (req, res) {
   res.sendFile(_path["default"].join(__dirname + '/client/build/index.html'));
 });
-app.use("/", authroutes);
+app.use("/", _auth["default"]);
 app.listen(PORT, function () {
   console.log("Server listening at port ".concat(PORT, "."));
 });
