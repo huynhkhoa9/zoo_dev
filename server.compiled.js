@@ -14,8 +14,8 @@ var mysql = require('mysql');
 
 var PORT = process.env.PORT || 8080;
 var app = (0, _express["default"])();
-app.use(_express["default"]["static"](_path["default"].join(__dirname, 'client', 'build')));
-app.use("/", authroutes);
+app.use(_express["default"]["static"](_path["default"].join(__dirname, 'client', 'build'))); //app.use("/", authroutes)
+
 app.listen(PORT, function () {
   console.log("Server listening at port ".concat(PORT, "."));
 });
