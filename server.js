@@ -14,8 +14,8 @@ app.get('*', (req,res) =>{
     res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
 
-router.post("/api/auth/signin", (req, res) =>{});
-router.post("/api/auth/signup", (req, res) =>{});
+router.post("/api/auth/signin", (req, res) =>{ res.send("Customer Sign In") });
+router.post("/api/auth/signup", (req, res) =>{res.send("Customer Registration") });
 router.post("/api/auth/employeesignin", (req, res) =>{});
 router.post("/api/auth/addanimal", (req, res) =>{});
 router.post("/api/auth/addemployee", (req, res) =>{});

@@ -19,8 +19,12 @@ app.use(_express["default"]["static"](_path["default"].join(__dirname, 'client/b
 app.get('*', function (req, res) {
   res.sendFile(_path["default"].join(__dirname + '/client/build/index.html'));
 });
-router.post("/api/auth/signin", function (req, res) {});
-router.post("/api/auth/signup", function (req, res) {});
+router.post("/api/auth/signin", function (req, res) {
+  res.send("Customer Sign In");
+});
+router.post("/api/auth/signup", function (req, res) {
+  res.send("Customer Registration");
+});
 router.post("/api/auth/employeesignin", function (req, res) {});
 router.post("/api/auth/addanimal", function (req, res) {});
 router.post("/api/auth/addemployee", function (req, res) {});
