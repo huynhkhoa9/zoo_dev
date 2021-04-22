@@ -16,7 +16,7 @@ export default function UserMainNavBar(){
     }
 
     return(
-        <div className="NavBar">
+        <div className="UserMainNavBar">
             <header>
                 <Button className="Main Page" block size="lg" type="submit" onClick={MainSubmit}>
                     Home
