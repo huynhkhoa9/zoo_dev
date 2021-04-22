@@ -56,14 +56,21 @@ export default function Login(){
             <MainPageNavBar />
             <h1>Login</h1>
             <form class="LoginForm" id="loginform" onSubmit={handleSubmit3}>
+                <div>
                 <label>Enter Username</label>
                     <input type="text" placeholder="Username" id="username" onChange={(e)=> setUsername(e.target.value)}></input>
+                </div>
+
+                <div>
                 <label>Enter Password</label>
                     <input type="password" placeholder="Password" id="password" onChange={(e)=> setPassword(e.target.value)}></input>
-            
+                </div>
+
+                <div>
                 <Button className="login" block size="lg" type="submit" disabled={!validLength3}>
                     Login
                 </Button>
+                </div>
             </form>
         </div>
     )

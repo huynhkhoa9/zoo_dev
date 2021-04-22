@@ -52,12 +52,19 @@ export default function Login(){
             <MainPageNavBar />
             <h1>Login</h1>
             <form class="EmployeeLoginForm" id="Employeeloginform" onSubmit={handleSubmit4}>
+            <div>
                 <label>Enter Employee Id</label>
                     <input type="text" placeholder="Id" id="employeeid" onChange={(e)=> setEmployeeID(e.target.value)}></input>
+            </div>
+
+            <div>
                 <label>Enter Password</label>
                     <input type="password" placeholder="Password" id="password" onChange={(e)=> setEmployeePassword(e.target.value)}></input>
-            
+            </div>
+
+            <div>
                 <button type="submit">Login</button>
+            </div>
             </form>
         </div>
     )
